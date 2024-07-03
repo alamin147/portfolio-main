@@ -1,0 +1,16 @@
+
+.gradient-text {
+    background: linear-gradient(90deg, #6a31db, #9e78f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+
+  .custom-gradient {
+    background: radial-gradient(circle, #130a1f, #0f0715);
+  }
+  
+
+  .bg-card{
+    background: linear-gradient(90deg, #6a31db, #9e78f1);
+  }

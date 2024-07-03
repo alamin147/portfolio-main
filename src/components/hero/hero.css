@@ -1,0 +1,9 @@
+.custom-gradient {
+  background: radial-gradient(circle, #130a1f, #0f0715);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #7540df, #9877e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
