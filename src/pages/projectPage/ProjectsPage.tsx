@@ -5,6 +5,7 @@ import { Button } from "flowbite-react";
 import "./project.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navbars from "../../components/navbar/Navbars";
 
 export type InputFields = {
   _id: string;
@@ -26,7 +27,7 @@ const ProjectsPage = () => {
   console.log(id);
   const [project, setProject] = useState<InputFields>();
   useEffect(() => {
-    fetch(`https://server-mocha-tau.vercel.app/project/${id}`, {
+    fetch(`https://admin-server-portfolio.vercel.app/project/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -42,6 +43,7 @@ const ProjectsPage = () => {
 
   return (
     <>
+      <Navbars />
       <div className="bg-slate-950 text-white">
         <div className="container mx-auto">
           <div className="flex flex-col">
@@ -134,6 +136,3 @@ const ProjectsPage = () => {
   );
 };
 export default ProjectsPage;
-
-
-

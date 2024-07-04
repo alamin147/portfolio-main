@@ -4,7 +4,7 @@ import { FaRegClock } from "react-icons/fa6";
 const Blog = () => {
   const [allBlog, setAllBlog]: any = useState();
   useEffect(() => {
-    fetch(`https://server-mocha-tau.vercel.app/blog`, {
+    fetch(`https://admin-server-portfolio.vercel.app/blog`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 const Skills = () => {
   const [allSkill, setAllSkill]: any = useState();
   useEffect(() => {
-    fetch(`https://server-mocha-tau.vercel.app/skill`, {
+    fetch(`https://admin-server-portfolio.vercel.app/skill`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
       },
-      // body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {

@@ -6,7 +6,7 @@ import { InputFields } from "../../pages/projectPage/ProjectsPage";
 const Projects = () => {
   const [allProject, setAllProject] = useState<InputFields[]>();
   useEffect(() => {
-    fetch(`https://server-mocha-tau.vercel.app/project`, {
+    fetch(`https://admin-server-portfolio.vercel.app/project`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
