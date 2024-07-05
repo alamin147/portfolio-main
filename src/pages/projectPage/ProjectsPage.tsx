@@ -105,27 +105,39 @@ const ProjectsPage = () => {
             </section>
             <section className="w-full py-12 md:py-24 lg:py-32">
               <div className="container grid gap-8 lg:grid-cols-3 lg:gap-12">
-                <img
-                  src={project?.imgUrl1}
-                  width={400}
-                  height={300}
-                  alt="Project Image 1"
-                  className="aspect-[4/3] rounded-lg object-cover"
-                />
-                <img
-                  src={project?.imgUrl2}
-                  width={400}
-                  height={300}
-                  alt="Project Image 2"
-                  className="aspect-[4/3] rounded-lg object-cover"
-                />
-                <img
-                  src={project?.imgUrl3}
-                  width={400}
-                  height={300}
-                  alt="Project Image 3"
-                  className="aspect-[4/3] rounded-lg object-cover"
-                />
+                {project?.imgUrl1 ? (
+                  <img
+                    src={project?.imgUrl1}
+                    width={400}
+                    height={300}
+                    alt="Project Image 1"
+                    className="aspect-[4/3] rounded-lg object-cover"
+                  />
+                ) : (
+                  <></>
+                )}
+                {project?.imgUrl2 ? (
+                  <img
+                    src={project?.imgUrl2}
+                    width={400}
+                    height={300}
+                    alt="Project Image 1"
+                    className="aspect-[4/3] rounded-lg object-cover"
+                  />
+                ) : (
+                  <></>
+                )}
+                {project?.imgUrl3 ? (
+                  <img
+                    src={project?.imgUrl3}
+                    width={400}
+                    height={300}
+                    alt="Project Image 1"
+                    className="aspect-[4/3] rounded-lg object-cover"
+                  />
+                ) : (
+                  <></>
+                )}
               </div>
             </section>
           </div>
