@@ -22,10 +22,7 @@ const Contact = () => {
                     GET IN TOUCH
                   </h1>
                   <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eius tempor incididunt ut labore e dolore magna aliqua.
-                    Ut enim adiqua minim veniam quis nostrud exercitation
-                    ullamco
+                    You can talk to with me and get solutions for your Business
                   </p>
                   <form>
                     <ContactInputBox
@@ -50,13 +47,10 @@ const Contact = () => {
                       defaultValue=""
                     />
                     <div>
-                      <button
-                        type="submit"
-                        className=""
-                      >
-                       <div className="">
-                       <Buttons text="Send Message" />
-                       </div>
+                      <button type="submit" className="">
+                        <div className="">
+                          <Buttons text="Send Message" />
+                        </div>
                       </button>
                     </div>
                   </form>

@@ -21,8 +21,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="max-w-md pr-16 text-md text-gray-200">
-                Enhance productivity and efficiency with cutting-edge artificial
-                intelligence solutions for your business operations.
+                Enhance productivity and efficiency with cutting-edge solutions for your business.
               </div>
             </div>
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
