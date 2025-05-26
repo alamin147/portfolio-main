@@ -1,4 +1,17 @@
+
+
+/* navbar.css */
 .custom-gradient {
-    background: radial-gradient(circle, #130a1f, #0f0715);
-  }
-  
+  background: none; /* Ensure no background is applied to the parent container */
+}
+
+.bg-transparent {
+  background-color: transparent !important; /* Override any background color */
+}
+
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure the Navbar stays above other content */
+  width: 100%; /* Make sure the Navbar spans the full width of the viewport */
+}

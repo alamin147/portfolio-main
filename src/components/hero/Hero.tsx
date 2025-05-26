@@ -5,17 +5,18 @@ import { IoMailOpenOutline } from "react-icons/io5";
 import "./hero.css";
 import { Button } from "flowbite-react";
 import Stats from "../stats/Stats";
-import resume from "../../assets/Alamin_Resume_Backend.pdf";
+// import resume from "../../assets/Alamin_Resume_Backend.pdf";
 const Hero = () => {
   return (
-    <div className="custom-gradient">
-      <section className="pt-20 md:pt-40 ">
-        <div className="container mx-auto max-w-7xl px-8 lg:flex items-center justify-between">
+    <div style={{ background: "linear-gradient(60deg, #18101F, #28015f)" }}>
+      <section className="pt-20">
+        <div className="container mx-auto max-w-[90rem] px-8 lg:flex items-center justify-between">
           <div className="text-center lg:text-left lg:w-1/2">
-            <h3 className="text-white text-3xl font-bold">Hi, I'm Al Amin</h3>
-            <h1 className="gradient-text text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
+            <h3 className="text-white text-2xl font-bold">Hi, I'm Al Amin</h3>
+            <h1 className="gradienttext text-4xl lg:text-6xl xl:text-7xl font-bold leading-none">
               Backend Developer
             </h1>
+
             <p className="text-xl lg:text-2xl mt-6 font-light text-white">
               I am currently studying in computer science and engineering. I am
               passionate about coding and learning new technologies. I prefer
@@ -26,7 +27,8 @@ const Hero = () => {
               <Button className="rounded-full me-2 bg-gradient-to-r from-indigo-950 to-indigo-800 border-0 py-1 px-3 font-bold hover:bg-gradient-to-r hover:from-indigo-800 hover:to-indigo-950 transition duration-200 ease-in-out ">
                 <a
                   className="flex"
-                  href={resume}
+                  // href={resume}
+                  href="https://drive.google.com/uc?export=download&id=1GXB2uGc9n3DW0WjPDLWjtKhqIeKT73C6"
                   download="Alamin_Resume_Backend.pdf"
                 >
                   <p>Download Resume</p>

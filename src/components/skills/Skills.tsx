@@ -1,43 +1,62 @@
 import "./skill.css";
-import { useEffect, useState } from "react";
-
+import { FaNode, FaReact } from "react-icons/fa";
+import { SiPostgresql, SiMongodb, SiMongoose, SiExpress } from "react-icons/si";
+import { TbBrandTypescript } from "react-icons/tb";
+import { RiTailwindCssFill, RiJavascriptLine } from "react-icons/ri";
 const Skills = () => {
-  const [allSkill, setAllSkill]: any = useState();
-  useEffect(() => {
-    fetch(`https://admin-server-portfolio.vercel.app/skill`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result);
-        setAllSkill(result);
-      });
-  }, []);
+  const skills = [
+    { icon: <FaReact />, name: "React Js", color: "blue" },
+    { icon: <SiExpress />, name: "Express Js", color: "white" },
+    { icon: <FaNode />, name: "Node Js", color: "green" },
+    { icon: <SiPostgresql />, name: "PostgreSQL", color: "postgres" },
+    { icon: <SiMongodb />, name: "MongoDB", color: "green" },
+    { icon: <SiMongoose />, name: "Mongoose", color: "mongoose" },
+    { icon: <TbBrandTypescript />, name: "TypeScript", color: "typescript" },
+    { icon: <RiJavascriptLine />, name: "JavaScript", color: "yellow" },
+    { icon: <RiTailwindCssFill />, name: "Tailwind CSS", color: "lightBlue" },
+  ];
 
   return (
-    <div className="custom-gradient">
-      <div className="mx-auto container">
-        <h1 className="py-10 gradient-text text-center text-3xl md:text-6xl font-bold">
+    <div className="text-white bg-gradient-to-r from-indigo-950 to-indigo-800 text-center">
+      <div className="container mx-auto">
+        <h1 className="py-20 gradienttexts text-center text-3xl md:text-6xl font-bold">
           Skills
         </h1>
+        <p className="-mt-14 mb-16">
+          We put your ideas and thus your wishes in the form of a unique web
+          project that inspires you and your customers.
+        </p>
 
-        <div className="grid grid-cols-2 sm:grid md:grid-cols-5 gap-4">
-          {allSkill?.map((skill: any) => (
-            <div key={skill._id} className="relative max-w-sm mx-auto my-8">
-              <div className="relative bg-black text-white rounded-lg overflow-hidden shadow-lg group">
-                <img
-                  src={skill?.imgUrl}
-                  alt=""
-                  className="w-full h-32 object-cover opacity-70 white-image"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h2 className="text-2xl font-semibold">{skill?.title}</h2>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center text-center group-hover:opacity-0 transition-opacity duration-300"></div>
+        <div className="pb-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {skills.map((skill, index) => (
+            //   <div
+            //     key={index}
+            //     className="
+            // bg-indigo-950
+            // p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105
+            // brder flex flex-col justify-center items-center
+            // hover:shadow-[0_0_15px_5px_rgba(99,102,241,0.7)]
+            // hover:ring-4 hover:ring-indigo-500/50"
+            //   >
+            //     <div className="text-4xl mb-4 text-white hover:text-indigo-500/50">{skill.icon}</div>
+            //     <p className="text-xl text-purple-300">{skill.name}</p>
+            //   </div>
+
+            <div
+              key={index}
+              className="
+              skill-card
+            bg-indigo-950
+            p-6 rounded-lg text-center shadow-lg transition-transform transform hover:scale-105
+            brder flex flex-col justify-center items-center
+            hover:shadow-[0_0_15px_5px_rgba(99,102,241,0.7)]
+            hover:ring-4 hover:ring-indigo-500/50"
+              data-color={skill.color}
+            >
+              <div className="skill-icon text-4xl mb-4 text-white">
+                {skill.icon}
               </div>
+              <p className="text-xl text-purple-300 ">{skill.name}</p>
             </div>
           ))}
         </div>

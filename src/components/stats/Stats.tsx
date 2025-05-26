@@ -5,7 +5,7 @@ const Stats = () => {
         <div className="flex flex-col items-center justify-center">
           <dt className="mb-2 text-3xl md:text-4xl font-extrabold">2 </dt>
           <dd className="font-light text-white dark:text-white">
-            Years experience
+            Years Learning experience
           </dd>
         </div>
         <div className="flex flex-col items-center justify-center">

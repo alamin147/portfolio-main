@@ -10,7 +10,7 @@ import Study from "../../components/study/Study";
 const Home = () => {
   return (
     <div className="">
-      <div className="mx-auto">
+      <div >
         <Navbars />
       </div>
       <div>

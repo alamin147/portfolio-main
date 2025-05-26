@@ -1,8 +1,10 @@
 const Study = () => {
   return (
-    <div className="custom-gradient">
+     <div className="bg-gradient-to-r from-indigo-950 to-indigo-800"
+      // style={{ background: "linear-gradient(60deg, #18101F, #28015f)" }}
+    >
       <div className="mx-auto container pb-10">
-        <h1 className="py-10 gradient-text text-center text-3xl md:text-6xl font-bold">
+        <h1 className="py-10 pt-20 gradienttexts text-center text-3xl md:text-6xl  font-bold">
           Education
         </h1>
 
@@ -13,7 +15,7 @@ const Study = () => {
             <div className="mt-1 text-gray-400">B.Sc in</div>
             <div className="mt- text-2xl font-bold">Computer Science and Engineering</div>
             
-            <div className="mt-1 text-gray-400">Daffodil International University</div>
+            <div className="mt-1 text-gray-400">Daffodil International University, Dhaka, Bangladesh</div>
           </div>
         </div>
       </div>

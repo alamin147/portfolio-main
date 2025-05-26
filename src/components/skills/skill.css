@@ -1,4 +1,39 @@
-.white-image {
-    filter: invert(100%);
-  }
-  
+.skill-card .skill-icon {
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  color: var(--skill-color);
+}
+
+/* Applying dynamic color based on data attribute */
+.skill-card[data-color="white"] .skill-icon {
+  --skill-color: white;
+}
+
+.skill-card[data-color="green"] .skill-icon {
+  --skill-color: green;
+}
+
+.skill-card[data-color="postgres"] .skill-icon {
+  --skill-color: #31648c;
+}
+
+.skill-card[data-color="typescript"] .skill-icon {
+  --skill-color: #306eb1;
+}
+
+.skill-card[data-color="mongoose"] .skill-icon {
+  --skill-color: #880000;
+}
+
+.skill-card[data-color="yellow"] .skill-icon {
+  --skill-color: #e8d44d;
+}
+
+.skill-card[data-color="blue"] .skill-icon {
+  --skill-color: #04D2EF;
+}
+.skill-card[data-color="lightBlue"] .skill-icon {
+  --skill-color: #15B8C5;
+}
