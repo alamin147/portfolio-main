@@ -5,7 +5,7 @@ import { IoMailOpenOutline } from "react-icons/io5";
 import "./hero.css";
 import { Button } from "flowbite-react";
 import Stats from "../stats/Stats";
-// import resume from "../../assets/Alamin_Resume_Backend.pdf";
+
 const Hero = () => {  return (
     <div id="home" style={{ background: "linear-gradient(135deg, #0f0326, #2a015e)" }} className="relative overflow-hidden">
       {/* Animated background elements */}
@@ -20,7 +20,7 @@ const Hero = () => {  return (
           <div className="text-center lg:text-left lg:w-1/2">
             <span className="text-indigo-400 text-xl font-medium mb-4 inline-block tracking-wider">Hi, I'm Al Amin</span>
             <h1 className="gradienttext text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-              Backend<span className="block mt-2">Developer</span>
+              Fullstack<span className="block mt-2">Developer</span>
             </h1>
 
             <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 my-6 mx-auto lg:mx-0"></div>
@@ -63,6 +63,7 @@ const Hero = () => {  return (
                     <FaGithub size="22" />
                   </a>
                 </div>
+                
                 <div className="cursor-pointer border-2 border-indigo-500 rounded-full p-3 text-indigo-400 hover:text-white hover:bg-indigo-600 hover:border-indigo-600 hover:scale-110 transition-all duration-300 shadow-md">
                   <a
                     href="#contact"
