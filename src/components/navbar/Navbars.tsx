@@ -60,13 +60,13 @@ const Navbars = () => {
             <Buttons text="Hire me" />
           </a>
           <Navbar.Toggle />
-        </div>
-        <Navbar.Collapse className="md:bg-transparent bg-indigo-900 bg-opacity-80">
+        </div>        <Navbar.Collapse className="md:bg-transparent bg-indigo-900 bg-opacity-80">
           <Navbar.Link href="/">Home</Navbar.Link>
           <Navbar.Link className="" href="#projects">
             Projects
           </Navbar.Link>
           <Navbar.Link href="#skills">Skills</Navbar.Link>
+          <Navbar.Link href="#cp-profiles">CP Profiles</Navbar.Link>
           <Navbar.Link href="#blogs">Blogs</Navbar.Link>
           <Navbar.Link href="#education">Education</Navbar.Link>
           <Navbar.Link href="#contact">Contact</Navbar.Link>

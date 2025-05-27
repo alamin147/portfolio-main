@@ -297,9 +297,8 @@ const Contact = () => {
 
         <section className="relative z-10 text-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-              {/* Contact Form */}
-              <div className="lg:col-span-3 contact-card p-8 sm:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">              {/* Contact Form */}
+              <div className="lg:col-span-3 contact-card p-8 sm:p-10 shimmer-border">
                 <h2 className="text-center text-3xl font-bold gradient-text mb-2">
                   Get In Touch
                 </h2>

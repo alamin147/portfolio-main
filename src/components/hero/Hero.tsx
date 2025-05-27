@@ -7,7 +7,7 @@ import { Button } from "flowbite-react";
 import Stats from "../stats/Stats";
 // import resume from "../../assets/Alamin_Resume_Backend.pdf";
 const Hero = () => {  return (
-    <div style={{ background: "linear-gradient(135deg, #0f0326, #2a015e)" }} className="relative overflow-hidden">
+    <div id="home" style={{ background: "linear-gradient(135deg, #0f0326, #2a015e)" }} className="relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-20 left-10 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>

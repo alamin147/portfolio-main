@@ -1,5 +1,6 @@
 import Blog from "../../components/blogs/Blog";
 import Contact from "../../components/contact/Contact";
+import CPProfiles from "../../components/cp-profiles/CPProfiles";
 import Footer from "../../components/footer/Footer";
 import Hero from "../../components/hero/Hero";
 import Navbars from "../../components/navbar/Navbars";
@@ -18,9 +19,11 @@ const Home = () => {
       </div>
       <div id="projects" className="bg-slate-950 pb-10">
         <Projects />
-      </div>
-      <div id="skills">
+      </div>      <div id="skills">
         <Skills />
+      </div>
+      <div id="cp-profiles">
+        <CPProfiles />
       </div>
       <div id="blogs">
         <Blog />

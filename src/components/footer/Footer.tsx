@@ -67,7 +67,7 @@ const Footer = () => {
                   <ul role="list" className="mt-6 space-y-4">
                     <li>
                       <a
-                        href="/aboutus"
+                        href="/#home"
                         className="text-md leading-6 text-gray-300 hover:text-gray-50"
                       >
                         Home
@@ -80,13 +80,20 @@ const Footer = () => {
                       >
                         Projects
                       </a>
-                    </li>
-                    <li>
+                    </li>                    <li>
                       <a
                         href="/#skills"
                         className="text-md leading-6 text-gray-300 hover:text-gray-50"
                       >
                         Skills
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/#cp-profiles"
+                        className="text-md leading-6 text-gray-300 hover:text-gray-50"
+                      >
+                        CP Profiles
                       </a>
                     </li>
                     <li>
