@@ -45,6 +45,7 @@ const Blog = () => {
         <h1 className="pt-24 pb-5 gradienttexts text-center text-3xl md:text-6xl font-bold">
           Blogs
         </h1>
+         <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-4"></div>
         <p className=" text-white text-center">
           Dive into the articles where I share knowledge, experiences, and the
           latest trends in the industry.

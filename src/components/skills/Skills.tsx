@@ -21,11 +21,12 @@ const Skills = () => {
       <div className="container mx-auto">
         <h1 className="py-20 gradienttexts text-center text-3xl md:text-6xl font-bold">
           Skills
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-3"></div>
         </h1>
-        <p className="-mt-14 mb-16">
+        <div className="-mt-14 mb-10">
           We put your ideas and thus your wishes in the form of a unique web
           project that inspires you and your customers.
-        </p>
+        </div>
 
         <div className="pb-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {skills.map((skill, index) => (

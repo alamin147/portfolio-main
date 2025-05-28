@@ -88,13 +88,13 @@ color?:string,
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-14">
-          <h4 className="text-indigo-400 text-xl font-medium mb-4 tracking-wide">COMPETITIVE CODING</h4>
+        
           <h1 className="gradienttexts text-4xl md:text-5xl font-bold mb-6">
-            CP Profiles
+            Competitive Programming Profiles
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Check out my competitive programming profiles across various platforms where I solve algorithmic challenges and participate in coding contests.
+            Check out my competitive programming profiles across various platforms where I solve problems and participate in coding contests.
           </p>
         </div>
 

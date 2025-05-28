@@ -24,6 +24,7 @@ const Projects = () => {
     <div className="container mx-auto pt-10">
       <h1 className="pt-10 pb-5 gradienttexts text-center text-3xl md:text-6xl font-bold">
         Projects
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-5 mb-4"></div>
       </h1>
       <p className="mb-10 text-white text-center">Explore projects that highlight my skills, passion, and dedication to delivering innovative solutions.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-20">

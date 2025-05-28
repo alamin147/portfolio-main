@@ -109,11 +109,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="mt-16 border-t border-gray-400/30 pt-8 sm:mt-20 lg:mt-10">
+          {/* <div className="mt-16 border-t border-gray-400/30 pt-8 sm:mt-20 lg:mt-10">
             <div className="text-md text-center text-white">
               Copyright © 2024
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
