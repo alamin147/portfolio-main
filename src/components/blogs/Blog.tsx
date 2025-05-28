@@ -17,7 +17,6 @@ const Blog = () => {
   const [allBlog, setAllBlog]: any = useState([]);
   const [selectedBlog, setSelectedBlog]: any = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   useEffect(() => {
     fetch(`https://admin-server-portfolio.vercel.app/blog`, {
       method: "GET",
@@ -27,16 +26,45 @@ const Blog = () => {
     })
       .then((res) => res.json())
       .then((result) => setAllBlog(result));
+  }, []);  // Clean up function to ensure scrolling is re-enabled if component unmounts
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
+  // Add effect to handle escape key on mobile
+  useEffect(() => {
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscapeKey);
+    return () => {
+      window.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isModalOpen]);
   const openModal = (blog: any) => {
     setSelectedBlog(blog);
     setIsModalOpen(true);
+    // Prevent background scrolling when modal is open
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedBlog(null);
+    // Enable scrolling when modal is closed
+    document.body.style.overflow = 'auto';
+  };
+  // Handle clicking outside the modal to close it
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      e.preventDefault();
+      closeModal();
+    }
   };
 
   return (
@@ -99,46 +127,80 @@ const Blog = () => {
             </Fade>
           </div>
         </div>
-      </div>
+      </div>      {/* Modal */}
+      {isModalOpen && selectedBlog && (        <div
+          className="text-white fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
+          onClick={handleOutsideClick}
+        >
+          <div className="relative mx-auto bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-800 rounded-xl shadow-2xl overflow-hidden w-full max-w-6xl" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header with Button */}            {/* Desktop close button - hidden on mobile */}
+            <div className="absolute top-0 right-0 p-4 z-10 hidden md:block">
+                <button
+                onClick={closeModal}
+                className="bg-white/10 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border border-white/20"
+                aria-label="Close modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-      {/* Modal */}
-      {isModalOpen && selectedBlog && (
-        <div className="text-white fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="relative mx-auto bg-gradient-to-r from-indigo-950 to-indigo-800  rounded-lg shadow-lg overflow-hidden max-w-lg sm:max-w-2xl md:max-w-5xl lg:max-w-6xl p-4">
-            <button
-              onClick={closeModal}
-              className="absolute -top-1 -right-1 text-red-500 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:shadow-xl transition duration-300"
-            >
-              &times;
-            </button>
-            <div className="flex flex-col md:flex-row gap-6  max-w-4xl">
-              <div className="w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
-                <div className="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
-                  <img
+            {/* Mobile close button - visible only on mobile */}
+            <div className="absolute top-4 right-4 z-20 block md:hidden">
+                <button
+                onClick={closeModal}
+                className="bg-white/20 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg border border-white/30"
+                aria-label="Close modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col md:flex-row max-h-[85vh] md:max-h-[80vh] overflow-auto">
+              {/* Image Section */}
+              <div className="w-full md:w-2/5 relative">
+                <div className="relative overflow-hidden h-64 md:h-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent z-10"></div>                  <img
                     src={selectedBlog.imgUrl}
                     alt={selectedBlog.title}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover object-center"
                   />
+                  <div className="absolute bottom-4 left-4 z-20">
+                    <div className="bg-gradient-to-r from-purple-500 to-indigo-600 px-4 py-1 rounded-full text-xs font-bold inline-block">
+                      {selectedBlog.category}
+                    </div>
+                  </div>
                 </div>
-                {/* <div className="relative h-52 overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
-                    src={selectedBlog?.imgUrl}
-                    alt={selectedBlog?.title}
-                  />
-                  <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
-                </div> */}
               </div>
-              <div className="flex-grow">
-                <h1 className="text-white text-2xl md:text-4xl font-bold mb-4">
+
+              {/* Content Section */}
+              <div className="flex-grow p-6 md:p-8 flex flex-col">
+                <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   {selectedBlog.title}
                 </h1>
-                <div className="flex items-center gap-2 mb-4 text-white">
-                  <p>Category: {selectedBlog.category}</p>
-                  <FaRegClock size="16" />
-                  <p>{moment(selectedBlog.time).fromNow()}</p>
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 text-white/80 border-b border-white/10 pb-4">
+                  <div className="flex items-center">
+                    <FaRegClock size="14" className="mr-1.5" />
+                    <span className="text-sm">{moment(selectedBlog.time).fromNow()}</span>
+                  </div>
+                  <div className="hidden sm:block w-1.5 h-1.5 bg-white/30 rounded-full"></div>
+                  <div className="text-sm">
+                    Category: <span className="text-purple-300">{selectedBlog.category}</span>
+                  </div>
                 </div>
-                <p className="mt-0 md:mt-8 text-white">{selectedBlog?.des}</p>
+                  <div className="max-w-none flex-grow overflow-y-auto pr-1" style={{ maxHeight: "40vh" }}>
+                  <p className="text-white/90 leading-relaxed whitespace-pre-line text-base">
+                    {selectedBlog?.des}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+                  <div className="text-xs text-white/60">
+                    Published: {moment(selectedBlog.time).format('MMMM D, YYYY')}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

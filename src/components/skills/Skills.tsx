@@ -15,10 +15,9 @@ const Skills = () => {
     { icon: <RiJavascriptLine />, name: "JavaScript", color: "yellow" },
     { icon: <RiTailwindCssFill />, name: "Tailwind CSS", color: "lightBlue" },
   ];
-
   return (
     <div className="text-white bg-gradient-to-r from-indigo-950 to-indigo-800 text-center">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <h1 className="py-20 gradienttexts text-center text-3xl md:text-6xl font-bold">
           Skills
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-3"></div>
@@ -28,7 +27,7 @@ const Skills = () => {
           project that inspires you and your customers.
         </div>
 
-        <div className="pb-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div className="pb-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
           {skills.map((skill, index) => (
             //   <div
             //     key={index}
