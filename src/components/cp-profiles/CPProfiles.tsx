@@ -68,7 +68,7 @@ color?:string,
 }|null
   const [profiles, setProfiles] = useState<(CPProfile)[]>([]);
     useEffect(() => {
-      fetch(`https://admin-server-portfolio.vercel.app/cpProfiles`, {
+      fetch(`${import.meta.env.VITE_SERVER_URL}/cpProfiles`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -88,7 +88,7 @@ color?:string,
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-14">
-        
+
           <h1 className="gradienttexts text-4xl md:text-5xl font-bold mb-6">
             Competitive Programming Profiles
           </h1>

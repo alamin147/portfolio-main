@@ -8,7 +8,7 @@ import { Fade } from "react-awesome-reveal";
 const Projects = () => {
   const [allProject, setAllProject] = useState<InputFields[]>();
   useEffect(() => {
-    fetch(`https://admin-server-portfolio.vercel.app/project`, {
+    fetch(`${import.meta.env.VITE_SERVER_URL}/project`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

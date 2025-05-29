@@ -27,7 +27,7 @@ const ProjectsPage = () => {
   console.log(id);
   const [project, setProject] = useState<InputFields>();
   useEffect(() => {
-    fetch(`https://admin-server-portfolio.vercel.app/project/${id}`, {
+    fetch(`${import.meta.env.VITE_SERVER_URL}/project/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

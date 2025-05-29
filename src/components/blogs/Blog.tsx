@@ -18,7 +18,7 @@ const Blog = () => {
   const [selectedBlog, setSelectedBlog]: any = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
-    fetch(`https://admin-server-portfolio.vercel.app/blog`, {
+    fetch(`${import.meta.env.VITE_SERVER_URL}/blog`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
