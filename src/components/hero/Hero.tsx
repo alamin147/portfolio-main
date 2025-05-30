@@ -63,7 +63,7 @@ const Hero = () => {  return (
                     <FaGithub size="22" />
                   </a>
                 </div>
-                
+
                 <div className="cursor-pointer border-2 border-indigo-500 rounded-full p-3 text-indigo-400 hover:text-white hover:bg-indigo-600 hover:border-indigo-600 hover:scale-110 transition-all duration-300 shadow-md">
                   <a
                     href="#contact"

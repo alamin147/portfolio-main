@@ -6,6 +6,7 @@ import "./project.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbars from "../../components/navbar/Navbars";
+import SEO from "../../components/seo/SEO";
 
 export type InputFields = {
   _id: string;
@@ -40,9 +41,14 @@ const ProjectsPage = () => {
         setProject(result);
       });
   }, [id]);
-
   return (
     <>
+      <SEO
+        title={`${project?.title || 'Project'} | Alamin's Portfolio`}
+        description={project?.shortDes || 'Explore this project in Alamin\'s portfolio'}
+        pathname={`/projects/${id}`}
+        ogImage={project?.imgUrl || '/public/logo.png'}
+      />
       <Navbars />
       <div className="bg-slate-950 text-white">
         <div className="container mx-auto">

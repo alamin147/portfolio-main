@@ -5,12 +5,14 @@ import Footer from "../../components/footer/Footer";
 import Hero from "../../components/hero/Hero";
 import Navbars from "../../components/navbar/Navbars";
 import Projects from "../../components/projects/Projects";
+import SEO from "../../components/seo/SEO";
 import Skills from "../../components/skills/Skills";
 import Study from "../../components/study/Study";
 
 const Home = () => {
   return (
     <div className="">
+      <SEO />
       <div >
         <Navbars />
       </div>

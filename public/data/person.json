@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alamin",
+  "url": "https://portfolio-alamin-dev.vercel.app/",
+  "image": "https://portfolio-alamin-dev.vercel.app/src/assets/alamin-removebg-preview.png",
+  "jobTitle": "Fullstack Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Alamin Dev"
+  },
+  "alumniOf": {
+    "@type": "University",
+    "name": "Daffodil International University",
+    "sameAs": "https://daffodilvarsity.edu.bd"
+  },
+  "knowsAbout": ["React", "Node.js", "Express", "MongoDB", "PostgreSQL", "TypeScript", "JavaScript", "Competitive Programming"],
+  "sameAs": ["https://github.com/alamin147", "https://www.linkedin.com/in/alamin-developer"]
+}
