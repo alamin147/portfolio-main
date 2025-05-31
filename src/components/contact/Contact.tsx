@@ -16,13 +16,14 @@ type TInputs = {
 
 const url = import.meta.env.VITE_URL;
 
-const Contact = () => {
-  const {
+const Contact = () => {  const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<TInputs>();
+  } = useForm<TInputs>({
+    mode: "onBlur"
+  });
 
   const onSubmit: SubmitHandler<TInputs> = async (data) => {
     try {
@@ -79,27 +80,31 @@ const Contact = () => {
                       name="name"
                       error={errors.name}
                       errorMessage="Name is required"
-                    />
-                    <ContactInputBox
+                    />                    <ContactInputBox
                       type="email"
                       register={register}
                       placeholder="Your Email"
                       name="email"
                       error={errors.email}
-                      errorMessage="Email is required"
+                      errorMessage={
+                        errors.email?.type === "required"
+                          ? "Email is required"
+                          : "Please enter a valid email address"
+                      }
+                      validation={{
+                        required: true,
+                        pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+                      }}
                     />
-                  </div>
-
-                  <ContactInputBox
+                  </div>                  <ContactInputBox
                     type="text"
                     register={register}
                     placeholder="Subject"
                     name="subject"
                     error={errors.subject}
                     errorMessage="Subject is required"
-                  />
-
-                  <ContactTextArea
+                    validation={{ required: true }}
+                  />                  <ContactTextArea
                     row="6"
                     placeholder="Your Message"
                     register={register}
@@ -107,6 +112,7 @@ const Contact = () => {
                     error={errors.message}
                     errorMessage="Message is required"
                     defaultValue=""
+                    validation={{ required: true }}
                   />
 
                   <div className="flex justify-center pt-4">
@@ -199,6 +205,7 @@ const ContactTextArea = ({
   error,
   errorMessage,
   defaultValue,
+  validation = { required: true },
 }: {
   row: string;
   placeholder: string;
@@ -207,13 +214,14 @@ const ContactTextArea = ({
   error: any;
   errorMessage: string;
   defaultValue: string;
+  validation?: any;
 }) => {
   return (
     <div className="mb-6">
       <textarea
         rows={row}
         placeholder={placeholder}
-        {...register(name, { required: true })}
+        {...register(name, validation)}
         className="w-full resize-none rounded-lg contact-input px-4 py-3 text-white outline-none focus:border-indigo-500 placeholder-indigo-300/50"
         defaultValue={defaultValue}
       />
@@ -229,6 +237,7 @@ const ContactInputBox = ({
   name,
   error,
   errorMessage,
+  validation = { required: true },
 }: {
   type: string;
   placeholder: string;
@@ -236,13 +245,14 @@ const ContactInputBox = ({
   name: string;
   error: any;
   errorMessage: string;
+  validation?: any;
 }) => {
   return (
     <div className="mb-6">
       <input
         type={type}
         placeholder={placeholder}
-        {...register(name, { required: true })}
+        {...register(name, validation)}
         className="w-full rounded-lg contact-input px-4 py-3 text-white outline-none focus:border-indigo-500 placeholder-indigo-300/50"
       />
       {error && <p className="text-red-400 mt-1 text-sm font-medium">{errorMessage}</p>}
