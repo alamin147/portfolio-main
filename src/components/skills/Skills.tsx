@@ -1,19 +1,24 @@
 import "./skill.css";
 import { FaNode, FaReact } from "react-icons/fa";
-import { SiPostgresql, SiMongodb, SiMongoose, SiExpress } from "react-icons/si";
+import { SiPostgresql, SiMongodb, SiMongoose, SiExpress, SiC, SiCplusplus, SiHtml5, SiCss3 } from "react-icons/si";
 import { TbBrandTypescript } from "react-icons/tb";
 import { RiTailwindCssFill, RiJavascriptLine } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
 const Skills = () => {
   const skills = [
+      { icon: <TbBrandTypescript />, name: "TypeScript", color: "typescript" },
+      { icon: <RiJavascriptLine />, name: "JavaScript", color: "yellow" },
+      { icon: <SiExpress />, name: "Express Js", color: "white" },
+      { icon: <FaNode />, name: "Node Js", color: "green" },
     { icon: <FaReact />, name: "React Js", color: "blue" },
-    { icon: <SiExpress />, name: "Express Js", color: "white" },
-    { icon: <FaNode />, name: "Node Js", color: "green" },
-    { icon: <SiPostgresql />, name: "PostgreSQL", color: "postgres" },
     { icon: <SiMongodb />, name: "MongoDB", color: "green" },
     { icon: <SiMongoose />, name: "Mongoose", color: "mongoose" },
-    { icon: <TbBrandTypescript />, name: "TypeScript", color: "typescript" },
-    { icon: <RiJavascriptLine />, name: "JavaScript", color: "yellow" },
-    { icon: <RiTailwindCssFill />, name: "Tailwind CSS", color: "lightBlue" },
+    { icon: <SiPostgresql />, name: "PostgreSQL", color: "postgres" },
+    { icon: <RiTailwindCssFill />, name: "Tailwind CSS", color: "lightBlue" },    { icon: <SiRedux />, name: "Redux Toolkit", color: "redux" },
+    { icon: <SiCplusplus />, name: "C++", color: "cpp" },
+    { icon: <SiC />, name: "C", color: "c" },
+    { icon: <SiHtml5 />, name: "HTML", color: "html" },
+    { icon: <SiCss3 />, name: "CSS", color: "css" },
   ];
   return (
     <div className="text-white bg-gradient-to-r from-indigo-950 to-indigo-800 text-center">

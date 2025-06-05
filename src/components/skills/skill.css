@@ -37,3 +37,22 @@
 .skill-card[data-color="lightBlue"] .skill-icon {
   --skill-color: #15B8C5;
 }
+
+.skill-card[data-color="html"] .skill-icon {
+  --skill-color: #e34c26;
+}
+
+.skill-card[data-color="css"] .skill-icon {
+  --skill-color: #264de4;
+}
+
+.skill-card[data-color="c"] .skill-icon {
+  --skill-color: #5C6BC0;
+}
+
+.skill-card[data-color="cpp"] .skill-icon {
+  --skill-color: #00599C;
+}
+.skill-card[data-color="redux"] .skill-icon {
+  --skill-color: #593D88;
+}
